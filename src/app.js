@@ -1,5 +1,5 @@
 document.getElementById("drawButton").addEventListener("click", function() {
-  const suits = ["♥", "♦", "♣", "♠"];
+  const suits = ["&hearts;", "&diams;", "&clubs;", "&spades;"];
   const ranks = [
     "2",
     "3",
@@ -22,9 +22,10 @@ document.getElementById("drawButton").addEventListener("click", function() {
   const suit = suits[Math.floor(Math.random() * suits.length)];
   const cardRank = ranks[Math.floor(Math.random() * ranks.length)];
 
-  rankElement.textContent = cardRank;
+  rankElement.innerHTML = cardRank;
   suitElements.forEach(element => {
-    element.textContent = suit;
-    element.style.color = suit === "♥" || suit === "♦" ? "red" : "black";
+    element.innerHTML = suit;
+    element.style.color =
+      suit === "&hearts;" || suit === "&diams;" ? "red" : "black";
   });
 });
